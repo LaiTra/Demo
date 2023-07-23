@@ -12,6 +12,11 @@ render= ImageTk.PhotoImage(resize)
 img= Label(root, image=render)   
 img.place(x=0,y=0)
 
+#them icon
+icon = Image.open(r'C:\Users\My computer\Downloads\icon.PNG')
+photo = ImageTk.PhotoImage(icon)
+root.wm_iconphoto(False, photo)
+
 nb1_var=StringVar()
 nb2_var=StringVar()
 
@@ -35,7 +40,6 @@ def clear():
     nb1_var.set('')
     entry1=nb2_var.get()
     nb2_var.set('')
-    
 
 def cong():
     cong=Label(root,font=('Times New Roman',15),text='ket qua la:' + str(int(text.get()) + int(Text1.get())), fg='black' )
@@ -53,10 +57,6 @@ def chia():
     chia=Label(root,font=('Times New Roman',15),text='ket qua la:' + str(int(text.get()) / int(Text1.get())), fg='black' )
     chia.place(x=30,y=160) 
 
-
-    
-
-
 #button
 
 addition_button = Button(root,activeforeground='white',activebackground='blue',text ='Cộng',font=("Times New Roman",15),command=cong)
@@ -73,8 +73,5 @@ multiplication_button.place(x=120, y=250)
 
 division_button = Button(text ='Chia',activebackground='orange',activeforeground='white',font=("Times New Roman",15),command= chia)
 division_button.place(x=200, y=250)
-
-
- 
 
 root.mainloop()
